@@ -1,1 +1,19 @@
+1.
 
+miLength :: [a] -> Int
+miLength [] = 0                        
+miLength (x:xs) = 1 + miLength xs            
+
+miLast :: [a] -> a
+miLast [x] = x                              
+miLast (x:xs) = miLast xs                 
+
+duplicar :: [Int] -> [Int]
+duplicar [] = []
+duplicar (x:xs) = (x * 2) : duplicar xs
+
+eliminarPares :: [Int] -> [Int]
+eliminarPares [] = []
+eliminarPares (x:xs)
+    | even x    = eliminarPares xs           
+    | otherwise = x : eliminarPares xs       
