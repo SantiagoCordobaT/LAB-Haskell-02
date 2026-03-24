@@ -1,19 +1,35 @@
-1.
-
+--1.
+--a.
 miLength :: [a] -> Int
 miLength [] = 0                        
 miLength (x:xs) = 1 + miLength xs            
 
+--b.
 miLast :: [a] -> a
 miLast [x] = x                              
 miLast (x:xs) = miLast xs                 
 
+--c.
 duplicar :: [Int] -> [Int]
 duplicar [] = []
 duplicar (x:xs) = (x * 2) : duplicar xs
 
+--d.
 eliminarPares :: [Int] -> [Int]
 eliminarPares [] = []
 eliminarPares (x:xs)
     | even x    = eliminarPares xs           
     | otherwise = x : eliminarPares xs       
+
+--2.
+--a.
+miLength' xs = length xs
+miLast' xs = last xs
+
+--b.
+duplicar' :: [Int] -> [Int]
+duplicar' xs = map (*2) xs
+
+--c.
+eliminarPares' :: [Int] -> [Int]
+eliminarPares' xs = filter odd xs
