@@ -1,0 +1,30 @@
+--1.
+procesarLecturas :: (Double -> Double) -> [Double] -> [Double]
+procesarLecturas f lecturas = map f lecturas
+
+-- Ejemplo:
+-- procesarLecturas (\c -> c + 273.15) [0, 20, 30]  --a Kelvin
+
+--2.
+crearFiltro :: (a -> Bool) -> ([a] -> [a])
+crearFiltro p = \xs -> filter p xs
+
+-- Ejemplo:
+-- soloPares = crearFiltro even
+-- soloPares [1..5] -> [2, 4]
+
+--3.
+enRango :: Int -> Int -> (Int -> Bool)
+enRango min max = (\x -> x >= min && x <= max)
+
+-- Ejemplo:
+-- entre1y10 = enRango 1 10
+-- entre1y10 5 -> True
+
+--4.
+potenciador :: Int -> (Int -> Int)
+potenciador n = (\x -> x ^ n)
+
+-- Ejemplo:
+-- alCuadrado = potenciador 2
+-- alCuadrado 5 -> 25
