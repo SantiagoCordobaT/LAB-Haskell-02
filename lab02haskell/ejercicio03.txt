@@ -1,0 +1,72 @@
+--1.
+-- a.
+sumaLista :: [Int] -> Int
+sumaLista = sum
+
+-- b.
+mayoresQue10 :: [Int] -> Int
+mayoresQue10 xs = length (filter (> 10) xs)
+
+-- c.
+productoLista :: [Int] -> Int
+productoLista = product
+
+-- d. 
+celsiusAFahrenheit :: [Double] -> [Double]
+celsiusAFahrenheit = map (\c -> c * 1.8 + 32)
+
+-- e. 
+ajustarImpares :: [Int] -> [Int]
+ajustarImpares = map (\x -> if odd x then x + 5 else x)
+
+
+--2. 
+-- a.
+nombresLargos :: [String] -> [String]
+nombresLargos = filter (\n -> length n > 5)
+
+-- b.
+soloNegativos :: [Int] -> [Int]
+soloNegativos = filter (< 0)
+
+-- c.
+edadesUniversitarios :: [Int] -> [Int]
+edadesUniversitarios = filter (\e -> e >= 18 && e <= 25)
+
+
+--3.
+-- a. Sumar IVA (19%) solo a valores >= 1000 (los menores quedan igual)
+agregarIVA :: [Double] -> [Double]
+agregarIVA = map (\p -> if p >= 1000 then p * 1.19 else p)
+
+-- b.
+longitudesVocales :: [String] -> [Int]
+longitudesVocales lista = map length (filter (\p -> head p `elem` "aeiouAEIOU") lista)
+
+-- c.
+cuadradosPares :: [Int] -> [Int]
+cuadradosPares xs = map (^2) (filter even xs)
+
+
+--4.
+-- a.
+hayNegativo :: [Int] -> Bool
+hayNegativo = any (< 0)
+
+-- b.
+todosPares :: [Int] -> Bool
+todosPares = all even
+
+-- c.
+nombresCorrectos :: [String] -> Bool
+nombresCorrectos = all (\n -> not (null n) && head n `elem` ['A'..'Z'])
+
+
+--5.
+-- a.
+menoresQue100 :: [Int] -> [Int]
+menoresQue100 = takeWhile (< 100)
+
+-- b.
+sinCerosIniciales :: [Int] -> [Int]
+sinCerosIniciales = dropWhile (== 0)
